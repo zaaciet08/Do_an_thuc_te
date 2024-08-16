@@ -1,0 +1,320 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+
+/* CSS cho phần tử container */
+.container {
+    width: 96%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+/* Định dạng chung cho phần tử chứa nút back */
+.container .back {
+    position: absolute;
+    top: 11px; /* Căn chỉnh vị trí nút ở trên cùng của trang */
+    left: 20px; /* Căn chỉnh vị trí nút ở bên trái của trang */
+    background-color: #f5f5f5; /* Màu nền của nút */
+    border-radius: 50%; /* Tạo hình tròn cho nút */
+    padding: 10px; /* Khoảng cách từ biểu tượng đến viền */
+    cursor: pointer; /* Con trỏ chuột đổi thành hình bàn tay khi di chuột qua */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi khi hover */
+   
+}
+
+/* Định dạng biểu tượng xmark */
+.container .back i {
+    color: #333; /* Màu của biểu tượng */
+    font-size: 20px; /* Kích thước của biểu tượng */
+}
+
+/* Hiệu ứng khi di chuột vào nút back */
+.container .back:hover {
+    background-color: #e0e0e0; /* Đổi màu nền khi hover */
+    transform: scale(1.1); /* Tăng kích thước nhẹ khi hover */
+}
+
+/* Hiệu ứng khi nhấn vào nút back */
+.container .back:active {
+    background-color: #d5d5d5; /* Đổi màu nền khi nhấn */
+    transform: scale(0.9); /* Giảm kích thước khi nhấn */
+}
+
+/* CSS cho tiêu đề h2 */
+.container h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    width: 100%; /* Đảm bảo tiêu đề chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+/* CSS cho phần tử container_table bên trong container */
+.container .container_table {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+     /* Căn giữa các phần tử theo chiều dọc */
+    flex-wrap: nowrap; /* Đảm bảo các phần tử không xuống hàng */
+}
+
+.container .container_table .timkiem {
+    flex-basis: 60%; /* Chiếm 70% chiều rộng */
+    background-color: #f9f9f9; /* Màu nền tùy ý */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    border-radius: 4px; /* Bo tròn các góc */
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo cột */
+    gap: 10px; /* Khoảng cách giữa các phần tử bên trong */
+    margin-right: 10px;
+}
+
+.container .container_table .timkiem .search-bar {
+    width: 98%; /* Chiếm toàn bộ chiều rộng */
+    padding: 8px; /* Thêm khoảng cách bên trong */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    font-size: 16px; /* Kích thước chữ */
+}
+
+.container .container_table .timkiem .search-results {
+    flex-grow: 1; /* Chiếm không gian còn lại */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    background-color: #ffffff; /* Màu nền */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu cần */
+}
+.container .container_table .timkiem .result-table {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    border-collapse: collapse; /* Gộp viền các ô */
+}
+
+.container .container_table .timkiem .result-table th,
+.container .container_table .timkiem .result-table td {
+    border: 1px solid #ccc; /* Viền ô */
+    padding: 8px; /* Thêm khoảng cách bên trong ô */
+    text-align: center; /* Căn trái nội dung */
+}
+
+.container .container_table .timkiem .result-table th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+}
+
+.container .container_table .timkiem .result-table td input[type="number"] {
+    width: 60px; /* Độ rộng của input number */
+    padding: 4px; /* Khoảng cách bên trong */
+    font-size: 14px; /* Kích thước chữ */
+}
+.container .container_table .timkiem .result-table td select {
+    width: 80%; /* Độ rộng của input number */
+    padding: 4px; /* Khoảng cách bên trong */
+    font-size: 14px; /* Kích thước chữ */
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container .container_table .timkiem .result-table td button {
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    font-size: 14px; /* Kích thước chữ */
+    background-color: #007bff; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    border: none; /* Bỏ viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+   
+}
+
+.container .container_table .timkiem .result-table td button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+.container .container_table .hoadon {
+    flex-basis: 40%; /* Chiếm 30% chiều rộng */
+    background-color: #f9f9f9; /* Màu nền tùy ý */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    border-radius: 4px; /* Bo tròn các góc */
+    
+}
+.container .container_table .hoadon h4{
+    width: 100%; /* Đảm bảo tiêu đề chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa tiêu đề */
+    margin-bottom: 20px;
+}
+.container .container_table .hoadon .chitiet_hoadon {
+    flex-grow: 1; /* Chiếm không gian còn lại */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    background-color: #ffffff; /* Màu nền */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu cần */
+}
+.container .container_table .hoadon .hoadon_table {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    border-collapse: collapse; /* Gộp viền các ô */
+}
+
+.container .container_table .hoadon .hoadon_table th,
+.container .container_table .hoadon .hoadon_table td {
+    border: none; /* Viền ô */
+    padding: 10px; /* Thêm khoảng cách bên trong ô */
+    text-align: center; /* Căn trái nội dung */
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+.container .container_table .hoadon .hoadon_table th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+}
+.container .container_table .hoadon .chitiet_thanhtoan{
+    flex-grow: 1; /* Chiếm không gian còn lại */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    background-color: #ffffff; /* Màu nền */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu cần */
+    margin-top: 20px;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table td {
+    padding: 8px;
+    color: #555;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table td:first-child {
+    font-weight: bold;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table tr:last-child td {
+    text-align: left;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh_table tr:last-child td:first-child {
+    padding-right: 20px;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .radio-group {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .radio-group label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+    color: #555;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan .radio-group input[type="radio"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+.container .container_table .hoadon .chitiet_thanhtoan .tamtinh{
+    color: #333333;
+    font-weight: 600;
+}
+.container .container_table .hoadon .chitiet_thanhtoan .tongtien{
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+}
+.container .container_table .hoadon .chitiet_thanhtoan input[type="number"]{
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan button:hover {
+    background-color: #218838;
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.container .container_table .hoadon .chitiet_thanhtoan button:active {
+    background-color: #1e7e34;
+}
+/* Định dạng cho container chứa mã QR */
+.container .container_table .hoadon .chitiet_thanhtoan .qrcode {
+    text-align: center; /* Canh giữa nội dung trong container */
+    margin-top: 20px; /* Khoảng cách phía trên */
+    padding: 20px; /* Khoảng cách bên trong */
+    border: 2px solid #ccc; /* Viền container */
+    border-radius: 10px; /* Bo tròn góc của container */
+    background-color: #f9f9f9; /* Màu nền của container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+/* Định dạng cho tiêu đề */
+.container .container_table .hoadon .chitiet_thanhtoan .qrcode h3 {
+    font-size: 18px; /* Kích thước chữ của tiêu đề */
+    font-weight: bold; /* In đậm tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách dưới của tiêu đề */
+    color: #333; /* Màu chữ của tiêu đề */
+}
+
+/* Định dạng cho canvas chứa mã QR */
+.container .container_table .hoadon .chitiet_thanhtoan .qrcode canvas {
+    display: block; /* Hiển thị dưới dạng khối để dễ dàng căn chỉnh */
+    margin: 0 auto; /* Canh giữa canvas */
+    border: 1px solid #ddd; /* Viền của canvas */
+    border-radius: 5px; /* Bo tròn góc của canvas */
+}
+
+

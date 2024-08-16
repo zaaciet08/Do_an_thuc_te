@@ -1,0 +1,205 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    bottom: 0;
+    width: 300px;
+    z-index: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #023047 transparent;
+    border-right: 3px solid #ececec;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.close-btn {
+    width: 100%;
+    text-align: right;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+}
+  
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #aab7cf;
+}
+
+.Logo-container {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+}
+
+.Logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sidebar-nav {
+    margin: 20px 0;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 10px;
+}
+.sidebar-nav .nav-item img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.sidebar-nav .nav-heading {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 30px 0 10px 15px;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-link svg {
+    font-size: 16px;
+    margin-right: 10px;
+    fill: #000000c0;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+    background-color: #023047;
+}
+
+.sidebar-nav .nav-link:hover svg,
+.sidebar-nav .nav-link.active svg {
+    fill: #fff;
+}
+
+.sidebar-nav .nav-link:hover span,
+.sidebar-nav .nav-link.active span {
+    color: #fff;
+}
+
+@media (max-width: 1199px) {
+    .sidebar {
+      width: auto;
+      box-shadow: 15px 0 10px -5px rgba(37, 37, 37, 0.144);
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+}
+
+/* CSS cho phần tử container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* CSS cho phần tử container_table bên trong container */
+.container .container_table {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between; /* Thêm thuộc tính này */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    flex-wrap: wrap; /* Đảm bảo các phần tử xuống hàng nếu không đủ chỗ */
+}
+
+/* CSS cho tiêu đề h2 */
+.container h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    width: 100%; /* Đảm bảo tiêu đề chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+.container .container_table .timkiem {
+    flex-basis: 100%; /* Chiếm 70% chiều rộng */
+    background-color: #f9f9f9; /* Màu nền tùy ý */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    border-radius: 4px; /* Bo tròn các góc */
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo cột */
+    gap: 10px; /* Khoảng cách giữa các phần tử bên trong */
+    margin-right: 10px;
+}
+
+.container .container_table .timkiem .search-bar {
+    width: 98%; /* Chiếm toàn bộ chiều rộng */
+    padding: 8px; /* Thêm khoảng cách bên trong */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    font-size: 16px; /* Kích thước chữ */
+}
+
+.container .container_table .timkiem .search-results {
+    flex-grow: 1; /* Chiếm không gian còn lại */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    background-color: #ffffff; /* Màu nền */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu cần */
+}
+.container .container_table .timkiem .result-table {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    border-collapse: collapse; /* Gộp viền các ô */
+}
+
+.container .container_table .timkiem .result-table th,
+.container .container_table .timkiem .result-table td {
+    border: 1px solid #ccc; /* Viền ô */
+    padding: 8px; /* Thêm khoảng cách bên trong ô */
+    text-align: center; /* Căn trái nội dung */
+}
+
+.container .container_table .timkiem .result-table th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+}
+
+

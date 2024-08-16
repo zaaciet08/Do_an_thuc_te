@@ -1,0 +1,437 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    bottom: 0;
+    width: 300px;
+    z-index: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #023047 transparent;
+    border-right: 3px solid #ececec;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.close-btn {
+    width: 100%;
+    text-align: right;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+}
+  
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #aab7cf;
+}
+
+.Logo-container {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+}
+
+.Logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sidebar-nav {
+    margin: 20px 0;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 10px;
+}
+.sidebar-nav .nav-item img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.sidebar-nav .nav-heading {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 30px 0 10px 15px;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-link svg {
+    font-size: 16px;
+    margin-right: 10px;
+    fill: #000000c0;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+    background-color: #023047;
+}
+
+.sidebar-nav .nav-link:hover svg,
+.sidebar-nav .nav-link.active svg {
+    fill: #fff;
+}
+
+.sidebar-nav .nav-link:hover span,
+.sidebar-nav .nav-link.active span {
+    color: #fff;
+}
+
+@media (max-width: 1199px) {
+    .sidebar {
+      width: auto;
+      box-shadow: 15px 0 10px -5px rgba(37, 37, 37, 0.144);
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+}
+
+/* CSS cho phần tử container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* CSS cho phần tử container_table bên trong container */
+.container .container_table {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between; /* Thêm thuộc tính này */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    flex-wrap: wrap; /* Đảm bảo các phần tử xuống hàng nếu không đủ chỗ */
+}
+
+/* CSS cho tiêu đề h2 */
+.container h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    width: 100%; /* Đảm bảo tiêu đề chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+.container .container_table .timkiem {
+    flex-basis: 100%; /* Chiếm 70% chiều rộng */
+    background-color: #f9f9f9; /* Màu nền tùy ý */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    border-radius: 4px; /* Bo tròn các góc */
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo cột */
+    gap: 10px; /* Khoảng cách giữa các phần tử bên trong */
+    margin-right: 10px;
+}
+
+.container .container_table .timkiem .search-bar {
+    width: 98%; /* Chiếm toàn bộ chiều rộng */
+    padding: 8px; /* Thêm khoảng cách bên trong */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    font-size: 16px; /* Kích thước chữ */
+}
+
+.container .container_table .timkiem .search-results {
+    flex-grow: 1; /* Chiếm không gian còn lại */
+    padding: 10px; /* Thêm khoảng cách bên trong */
+    background-color: #ffffff; /* Màu nền */
+    border: 1px solid #ccc; /* Viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    overflow-y: auto; /* Hiển thị thanh cuộn dọc nếu cần */
+}
+.container .container_table .timkiem .result-table {
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    border-collapse: collapse; /* Gộp viền các ô */
+}
+
+.container .container_table .timkiem .result-table th,
+.container .container_table .timkiem .result-table td {
+    border: 1px solid #ccc; /* Viền ô */
+    padding: 8px; /* Thêm khoảng cách bên trong ô */
+    text-align: center; /* Căn trái nội dung */
+}
+
+.container .container_table .timkiem .result-table th {
+    background-color: #f2f2f2; /* Màu nền cho tiêu đề bảng */
+}
+
+.container .container_table .timkiem .result-table td input[type="number"] {
+    width: 60px; /* Độ rộng của input number */
+    padding: 4px; /* Khoảng cách bên trong */
+    font-size: 14px; /* Kích thước chữ */
+}
+.container .container_table .timkiem .result-table td select {
+    width: 80%; /* Độ rộng của input number */
+    padding: 4px; /* Khoảng cách bên trong */
+    font-size: 14px; /* Kích thước chữ */
+    text-align: center;
+    border-radius: 5px;
+}
+
+.container .container_table .timkiem .result-table td .btn_chinhsua {
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    font-size: 14px; /* Kích thước chữ */
+    background-color: #cbe414; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    border: none; /* Bỏ viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+    text-decoration: none;
+}
+
+.container .container_table .timkiem .result-table td .btn_chinhsua:hover {
+    background-color: #bac819; /* Màu nền khi hover */
+}
+
+/* Modal Background */
+.container .container_table .timkiem .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.container .container_table .timkiem .modal .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Close Button */
+.container .container_table .timkiem .modal .modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container .container_table .timkiem .modal .modal-content .close:hover,
+.container .container_table .timkiem .modal .modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.container .container_table .timkiem .modal .modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .container_table .timkiem .modal .modal-content  .form-group {
+    margin-bottom: 15px;
+}
+
+.container .container_table .timkiem .modal .modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+}
+
+.container .container_table .timkiem .modal .modal-content input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Update Button */
+.container .container_table .timkiem .modal .modal-content button[type="button"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container .container_table .timkiem .modal .modal-content button[type="button"]:hover {
+    background-color: #45a049;
+}
+.container .container_table .timkiem .result-table td .btn_xoa {
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    font-size: 14px; /* Kích thước chữ */
+    background-color: #ccd2ca; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    border: none; /* Bỏ viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+   
+}
+
+.container .container_table .timkiem .result-table td .btn_xoa:hover {
+    background-color: #da2809; /* Màu nền khi hover */
+}
+
+
+.container .btn_them {
+    position: absolute;
+    top: 60px; /* Căn chỉnh vị trí nút ở trên cùng của trang */
+    right: 155px; /* Căn chỉnh vị trí nút ở bên trái của trang */
+    padding: 5px 10px; /* Khoảng cách bên trong nút */
+    font-size: 14px; /* Kích thước chữ */
+    background-color: #20b10a; /* Màu nền của nút */
+    color: white; /* Màu chữ của nút */
+    border: none; /* Bỏ viền */
+    border-radius: 4px; /* Bo tròn các góc */
+    cursor: pointer; /* Con trỏ chuột khi hover */
+    text-decoration: none;
+}
+
+.container .btn_them:hover {
+    background-color: #1da20b; /* Màu nền khi hover */
+}
+/* Modal Background Thêm sản phẩm*/
+.container .modalThem {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.container .modalThem .modal-contentThem {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Close Button */
+.container .modalThem .modal-contentThem .closeThem {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container .modalThem .modal-contentThem .closeThem:hover,
+.container .modalThem .modal-contentThem .closeThem:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+.container .modalThem .modal-contentThem form {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .modalThem .modal-contentThem .form-groupThem {
+    margin-bottom: 15px;
+}
+
+.container .modalThem .modal-contentThem label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    display: block;
+}
+
+.container .modalThem .modal-contentThem input[type="text"]
+ {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Update Button */
+.container .modalThem .modal-contentThem button[type="button"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container .modalThem .modal-contentThem button[type="button"]:hover {
+    background-color: #45a049;
+}
+
+
+
+

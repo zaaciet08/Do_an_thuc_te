@@ -1,0 +1,352 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -400px;
+    bottom: 0;
+    width: 300px;
+    z-index: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #023047 transparent;
+    border-right: 3px solid #ececec;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+.close-btn {
+    width: 100%;
+    text-align: right;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #fff;
+}
+  
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #aab7cf;
+}
+
+.Logo-container {
+    text-align: center;
+    width: 100%;
+    height: 150px;
+}
+
+.Logo-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sidebar-nav {
+    margin: 20px 0;
+}
+
+.sidebar-nav .nav-item {
+    margin-bottom: 10px;
+}
+.sidebar-nav .nav-item img{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.sidebar-nav .nav-heading {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 30px 0 10px 15px;
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-link svg {
+    font-size: 16px;
+    margin-right: 10px;
+    fill: #000000c0;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+    background-color: #023047;
+}
+
+.sidebar-nav .nav-link:hover svg,
+.sidebar-nav .nav-link.active svg {
+    fill: #fff;
+}
+
+.sidebar-nav .nav-link:hover span,
+.sidebar-nav .nav-link.active span {
+    color: #fff;
+}
+
+@media (max-width: 1199px) {
+    .sidebar {
+      width: auto;
+      box-shadow: 15px 0 10px -5px rgba(37, 37, 37, 0.144);
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+}
+
+/* CSS cho phần tử container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+/* Định dạng chung cho phần tử chứa nút back */
+.container .back {
+    position: absolute;
+    top: 45px; /* Căn chỉnh vị trí nút ở trên cùng của trang */
+    right: 100px; /* Căn chỉnh vị trí nút ở bên trái của trang */
+    background-color: #f5f5f5; /* Màu nền của nút */
+    background-color: #28a745;
+    padding: 10px; /* Khoảng cách từ biểu tượng đến viền */
+    cursor: pointer; /* Con trỏ chuột đổi thành hình bàn tay khi di chuột qua */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi khi hover */
+    color: white;
+    border-radius: 10px;
+   
+}
+
+/* Định dạng biểu tượng xmark */
+.container .back i {
+    color: #333; /* Màu của biểu tượng */
+    font-size: 20px; /* Kích thước của biểu tượng */
+}
+
+/* Hiệu ứng khi di chuột vào nút back */
+.container .back:hover {
+    background-color: #e0e0e0; /* Đổi màu nền khi hover */
+    transform: scale(1.1); /* Tăng kích thước nhẹ khi hover */
+}
+
+/* Hiệu ứng khi nhấn vào nút back */
+.container .back:active {
+    background-color: #d5d5d5; /* Đổi màu nền khi nhấn */
+    transform: scale(0.9); /* Giảm kích thước khi nhấn */
+}
+/* CSS cho phần tử container_table bên trong container */
+.container .container_table {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between; /* Thêm thuộc tính này */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    flex-wrap: wrap; /* Đảm bảo các phần tử xuống hàng nếu không đủ chỗ */
+}
+
+/* CSS cho tiêu đề h2 */
+.container h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 15px;
+    width: 100%; /* Đảm bảo tiêu đề chiếm toàn bộ chiều rộng */
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* CSS cho các phần tử bên trong container_table */
+.container .container_table .banan
+ {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    width: 18%; /* Đặt chiều rộng cho các phần tử để chúng có kích thước cố định */
+    height: 121.175px ;/* Đặt chiều cao cho các phần tử */
+    box-sizing: border-box; /* Đảm bảo padding không ảnh hưởng đến chiều rộng và chiều cao */
+}
+
+/* CSS riêng cho từng phần tử */
+.container .container_table .banan {
+    background-color: #e9e2e2; /* Màu nền cho phần tử đang sử dụng */
+    
+}
+.container .container_table .banan h3{
+    margin-bottom: 5px;
+    color: #860707;
+}
+.container .container_table .banan a{
+    font-size: small;
+ 
+    text-decoration: none;
+}
+.bn13 {
+    margin-top: 5%;
+    display: inline-block;
+    border: 3px solid #ffffff;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #077019;
+    text-align: center;
+    transition: all 0.2s;
+    animation: bn13bouncy 5s infinite linear;
+    position: relative;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    margin-left: 40%;
+  }
+  
+  .bn13:hover {
+    background-color: white;
+    color: #000000;
+  }
+  
+  @keyframes bn13bouncy {
+    0% {
+      top: 0em;
+    }
+    40% {
+      top: 0em;
+    }
+    43% {
+      top: -0.9em;
+    }
+    46% {
+      top: 0em;
+    }
+    48% {
+      top: -0.4em;
+    }
+    50% {
+      top: 0em;
+    }
+    100% {
+      top: 0em;
+    }
+  }
+  /* Quản lý modal
+  /* Modal styles */
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"],
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn_datban {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+
